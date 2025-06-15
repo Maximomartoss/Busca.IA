@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador Inteligente de IA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Buscador Inteligente de IA</h1>
+    <p>Estas IAs han sido probadas antes de ser agregadas a la página.</p>
+    <div id="ia-count" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 255, 255, 0.8); padding: 5px; border-radius: 5px; color: black;">IA cargadas: <span id="count">0</span></div>
+    <input type="text" id="search" placeholder="¿Qué IA estás buscando? (ej: matemática, código)">
+    <div id="results" class="grid"></div>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <button onclick="closeModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Actualizar el contador de IAs
+    document.getElementById('count').innerText = iaList.length;
+  </script>
+</body>
+</html>
