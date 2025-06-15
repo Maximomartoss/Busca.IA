@@ -29,22 +29,37 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-input[type="text"] {
+.search-container {
+  position: relative;
   width: 100%;
-  padding: 0.8rem;
-  margin: 1rem 0;
-  font-size: 1rem;
-  border: 2px solid #8a2be2;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
-  animation: pulse 2s infinite;
+  max-width: 600px;
+  margin: 2rem auto;
+  z-index: 1;
 }
 
-input[type="text"]:focus {
+.search-container input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  color: #333;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.search-container input:focus {
   outline: none;
-  box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.4);
+}
+
+.search-container input::placeholder {
+  color: #666;
+  opacity: 0.8;
 }
 
 .grid {
