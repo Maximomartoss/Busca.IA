@@ -57,17 +57,52 @@ input[type="text"]:focus {
 .card {
   background: rgba(255, 255, 255, 0.9);
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   color: #333;
   animation: fadeIn 0.5s ease;
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(75, 0, 130, 0.1));
+  z-index: 0;
+}
+
+.card h3 {
+  color: #8a2be2;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card p {
+  color: #444;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.6);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.4);
+}
+
+.card:hover::before {
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(75, 0, 130, 0.2));
 }
 
 .modal {
